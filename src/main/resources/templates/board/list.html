@@ -116,6 +116,29 @@
             <h3 class="fs-5 col-md-8">Spring Boot를 이용해 웹 페이지 제작</h3>
             <h3 class="fs-5 col-md-8">Spring Security, JPA를 이용해 보안 설정과 데이터 다루기</h3>
             <hr class="col-3 col-md-2 mb-5">
+            <div class="fs-5 col-md-8">총 건수 : <span th:text="${#lists.size(boards)}"></span></div>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">번호</th>
+                        <th scope="col">제목</th>
+                        <th scope="col">작성자</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="board: ${boards}">
+                        <th th:text="${board.id}">Mark</th>
+                        <td th:text="${board.title}">Otto</td>
+                        <td>이규한</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div calss="text-end">
+                <button type="button" class="btn btn-primary">글 쓰기</button>
+            </div>
+
         </main>
 
     </div>
